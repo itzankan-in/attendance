@@ -155,6 +155,8 @@ body {
     height: auto;
     flex-direction: column;
     justify-content: center;
+    /* user-select: none; */
+    /* overflow-y: scroll; */
 }
 .th,.td {
     border: 2px solid #473D93;
@@ -174,7 +176,7 @@ body {
     background-color: #786cd7;
     color: white;
 }
-.td { color: black; font-size: 0.95rem; font-family: Arial, Helvetica, sans-serif; font-weight: bold;
+.td { color: black; font-family: Arial, Helvetica, sans-serif; font-weight: bold;
 background-color: #ada3fa;}
 
 
@@ -207,12 +209,15 @@ background-color: #ada3fa;}
     justify-content: center;
     align-items: center;
  }
-.thw-0 {
-    width: 100%;
+ .tdf {
+    min-width: 15rem;
+    padding: 5px;
+ }
+ }
+.tdre {
+    min-width: 150px;
 }
-.tdw {
-    width: 30%;
-}
-.thw-1 {
-    width: 200%;
+.temPo {
+    height: 35vw;
+    overflow: hidden;
 }
