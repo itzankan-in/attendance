@@ -21,9 +21,14 @@ let chartCode2= `<div class="table table-webview">
      </div>
      </div>
     </div>`
-
+let chartCode3 = `<input type="text" name="" id="studentSearch" placeholder="Search by students name">
+    <div class="cardHolder">
+       
+    </div>
+`
 let JSONDATA = {};
-
+let sSearch = "";
+let dataArr = "";
 
 
 if (hh>=0&&hh<12) {
@@ -51,17 +56,21 @@ function stopLoading() {
 loading()
 let response = fetch(API).then(e=>e.json()).then(async (e) => {
     JSONDATA = e;
-    console.log(JSONDATA)
-    console.log(JSONDATA)
+    // console.log(JSONDATA)
+    // console.log(JSONDATA)
+    dataArr=JSONDATA.data
     stopLoading();
+    
 }) 
 const btn = document.getElementsByClassName("bth");
 // console.log(btn.length)
-for (let i =0; i<4; i++) {
+for (let i =0; i<btn.length; i++) {
     // console.log(i)
    btn[0].addEventListener("click", clickF1)
    btn[1].addEventListener("click", clickF2)
    btn[2].addEventListener("click", clickF3)
+   btn[3].addEventListener("click", clickF4)
+//    console.log(btn[3])
 }
 
 function clickF1() {
@@ -150,4 +159,58 @@ function clickF3() {
       })
     })
 }
-   
+function clickF4() {
+    // alert("hi")
+    MAINBODY.innerHTML = chartCode3;
+    let cardHolder = document.querySelector(".cardHolder")
+    JSONDATA.data.forEach((e,i) => {
+        if(e['Name']=='TOTAL'||e['Name']=='PRESENT'||e['Name']=="ABSENT") {
+            return;
+        } else {
+            let card = document.createElement("div")
+            card.setAttribute("class",`card card-${i}`)
+            card.setAttribute("admn",`${e['Admission-Number']}`)
+            
+
+            let cardName = document.createElement("div")
+            cardName.setAttribute("class",`card-name name-card-${i}`)
+            cardName.innerHTML = `${e['Name']}`
+
+        
+            let cardRoll = document.createElement("div")
+            cardRoll.setAttribute("class",`card-roll`)
+            cardRoll.innerHTML = `${e['Roll-No']}. `
+        
+        
+            card.appendChild(cardRoll)
+            card.appendChild(cardName)
+            cardHolder.appendChild(card)
+        }
+    })
+    sSearch = document.querySelector("#studentSearch")
+    sSearch.addEventListener("input", fkn)
+    sSearch.addEventListener("keydown", (e) => {if(e.key=="Backspace") {fkn()}})
+
+    let cardArr = Array.from(document.getElementsByClassName("card"))
+    console.log(cardArr)
+    cardArr.forEach(e=>{
+        e.addEventListener("click",  () =>{render(Number.parseInt(e.getAttribute("admn")))})
+    })
+}
+    let fkn = () => {
+        let cardArr = Array.from(document.getElementsByClassName("card"))
+        cardArr.forEach(e => {
+            if(e.childNodes[1].innerHTML.toLowerCase().includes(sSearch.value.toLowerCase())) {
+               e.style.display="flex"
+            } else {
+                e.style.display = "none"
+            }
+        })
+    
+    }
+function render(admn) {
+    
+ 
+    }
+
+
