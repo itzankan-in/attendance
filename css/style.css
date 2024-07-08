@@ -279,7 +279,7 @@ background-color: #ada3fa;}
     margin-left: 2rem;
     height: var(--x);
     width: var(--x);
-    background-color: gray;
+    background-color: #786cd7;
     border-radius: 50%;
     user-select: none;
     display: flex;

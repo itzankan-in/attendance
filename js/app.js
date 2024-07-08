@@ -28,7 +28,8 @@ let chartCode3 = `<input type="text" name="" id="studentSearch" placeholder="Sea
 `
 let JSONDATA = {};
 let sSearch = "";
-let dataArr = "";
+let dataArr = [];
+
 
 
 if (hh>=0&&hh<12) {
@@ -209,8 +210,53 @@ function clickF4() {
     
     }
 function render(admn) {
+    let localJson = {};
+    let localDateArr=[];
+    dataArr.forEach((e) => {if(e['Admission-Number']===admn){localJson = e}})
     
- 
+    for(i in localJson) {
+        if(i=='Name'||i=='Admission-Number'||i=="Roll-No") {
+            continue;
+        } else {
+            localDateArr.push(i)
+        }
     }
+    let totalSchoolDays = localDateArr.length;
+
+    let datePresent = 0;
+    localDateArr.forEach(e => {
+        if(localJson[e]=='P') {
+            datePresent += 1
+        }
+    })
+    
+    let dateAbsent = totalSchoolDays - datePresent;
+    let absentP = ((datePresent/(totalSchoolDays))*100).toFixed(1);
+    console.log(totalSchoolDays,datePresent,dateAbsent,absentP)
+
+    MAINBODY.innerHTML = `  
+    <div class="details">
+    <div class="subDetails">
+<div class="backButton" onclick="clickF4">
+    <i class="material-icons">arrow_back</i>
+</div>
+<!-- </div> -->
+<div class="roll-no">${localJson['Roll-No']}.</div>
+<div class="name">${localJson['Name']}</</div>
+</div>
+</div>
+<div class="statHolder">
+<div class="stats">Roll No- ${localJson['Roll-No']}</div>
+<div class="stats">Admission Number -${localJson['Admission-Number']}</div>
+<div class="stats">Total school day - ${totalSchoolDays}</div>
+<div class="stats">Number of days attended - ${datePresent}</div>
+<div class="stats">Number of days absent - ${dateAbsent}</div>
+<div class="stats">Attendence percentage - ${absentP}%</div>
+</div>
+</div>
+
+      `
+    document.querySelector(".backButton").addEventListener("click", () => {clickF4()})
+}
 
 
