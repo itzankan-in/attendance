@@ -92,7 +92,7 @@ function clickF1() {
 
 function clickF2() {
 
-    window.open("https://docs.google.com/spreadsheets/d/1F-jS6xYj8O6XxpONbIWmsBuRY2B5dOILJ-BayL0DYVk/edit?gid=184318363#gid=184318363 ")
+    window.open("https://docs.google.com/spreadsheets/d/1F-jS6xYj8O6XxpONbIWmsBuRY2B5dOILJ-BayL0DYVk/edit?gid=184318363#gid=184318363")
 }
 function clickF3() {
     MAINBODY.innerHTML = chartCode2;
