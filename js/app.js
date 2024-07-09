@@ -3,6 +3,7 @@
 
 const API = "https://script.google.com/macros/s/AKfycbzJUyopBUMQxsSpif1BKkfhbmuGaBaLuCv5SXi-CJmWlPSi0vF2nNiN7cSGdXGg4O0GMA/exec"
 const GREET = document.querySelector("#greeting");
+const MAINBODY = document.querySelector(".mainbody")
 let chartCode = ` <div class="table">
             <div class="tr tr1">
                 <div class="th th1" style=>Roll Number</div>
