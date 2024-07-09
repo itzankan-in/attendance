@@ -1,7 +1,7 @@
 
 
 
-const API = "https://script.google.com/macros/s/AKfycbzJUyopBUMQxsSpif1BKkfhbmuGaBaLuCv5SXi-CJmWlPSi0vF2nNiN7cSGdXGg4O0GMA/exec"
+const API = "https://script.google.com/macros/s/AKfycbwalNENy13AwG3rm4Dsyfitv_Ma1SQmpYnQyCOpTi14qC3ndszYnrNvBAhBvsIK-PHnQw/exec"
 const GREET = document.querySelector("#greeting");
 const MAINBODY = document.querySelector(".mainbody")
 let chartCode = ` <div class="table">
