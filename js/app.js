@@ -1,4 +1,4 @@
-let date = new Date();
+
 const API = "https://script.googleusercontent.com/macros/echo?user_content_key=VIRw8Mnk95jWk3xMK8aRi_ACCtgeXzFch9xj--wteoIh3dQ0D5UwSUu18-FxxKxQsODuTKzFieKeKvDMlB8xyehpB3SlJtvmm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDEeRQvmyOzubxLUUbQL_LYBLqv9ME5tC-ZjMNfA4XMzHcFSgXaPPsr7X0rZI3aU4BqqZ3UlevfOtTuTWJBsdj3tmANFrvb1g9z9Jw9Md8uu&lib=MK3rsfq1iNKA8KRA5dbzb3LqhTasYq6kZ"
 const MAINBODY = document.querySelector(".mainbody")
 const GREET = document.querySelector("#greeting")
@@ -32,11 +32,7 @@ let dataArr = [];
 
 
 
-if (hh>=0&&hh<12) {
-    GREET.innerHTML="Good Morning!"
-} else {
-    GREET.innerHTML="Good Evening!"
-}
+
 let logo1 = document.querySelector(".logo1")
 logo1.addEventListener("click", () => {
     // location.href = "https://pmshri.education.gov.in"
