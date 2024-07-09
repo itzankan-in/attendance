@@ -1,6 +1,7 @@
 
-const API = "https://script.googleusercontent.com/macros/echo?user_content_key=VIRw8Mnk95jWk3xMK8aRi_ACCtgeXzFch9xj--wteoIh3dQ0D5UwSUu18-FxxKxQsODuTKzFieKeKvDMlB8xyehpB3SlJtvmm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDEeRQvmyOzubxLUUbQL_LYBLqv9ME5tC-ZjMNfA4XMzHcFSgXaPPsr7X0rZI3aU4BqqZ3UlevfOtTuTWJBsdj3tmANFrvb1g9z9Jw9Md8uu&lib=MK3rsfq1iNKA8KRA5dbzb3LqhTasYq6kZ"
-const MAINBODY = document.querySelector(".mainbody")
+
+
+const API = "https://script.google.com/macros/s/AKfycbzJUyopBUMQxsSpif1BKkfhbmuGaBaLuCv5SXi-CJmWlPSi0vF2nNiN7cSGdXGg4O0GMA/exec"
 const GREET = document.querySelector("#greeting");
 let chartCode = ` <div class="table">
             <div class="tr tr1">
@@ -90,7 +91,7 @@ function clickF1() {
 
 function clickF2() {
 
-    window.open("https://docs.google.com/spreadsheets/d/1D90gvkRE2saWPJAm7xq8tC0cZRZ5_NP-KDJ5lOnJ3S0/edit?gid=1962345637#gid=1962345637 ")
+    window.open("https://docs.google.com/spreadsheets/d/1F-jS6xYj8O6XxpONbIWmsBuRY2B5dOILJ-BayL0DYVk/edit?gid=184318363#gid=184318363 ")
 }
 function clickF3() {
     MAINBODY.innerHTML = chartCode2;
